@@ -1,0 +1,1 @@
+# An application that includes a survey for the user to answer. The answers are compared with a list of friends in order to find a friend that has the best compatibility score with the user!
