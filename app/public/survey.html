@@ -33,9 +33,16 @@
                                         </div>
                                     </div>
 
-                                    <label>Browser Select</label>
+                                    <label>What color do you like?</label>
                                     <select class="browser-default" id="q1">
-                                        <option value="" disabled selected>Choose your option</option>
+                                        <option value="" hidden disabled selected>Select a Color</option>
+                                        <option value="1">Red</option>
+                                        <option value="2">Blue</option>
+                                        <option value="3">Green</option>
+                                    </select>
+
+                                    <label>Browser Select</label>
+                                    <select class="browser-default" id="q2">
                                         <option value="1">Option 1</option>
                                         <option value="2">Option 2</option>
                                         <option value="3">Option 3</option>
@@ -43,7 +50,6 @@
 
                                     <label>Browser Select</label>
                                     <select class="browser-default" id="q2">
-                                        <option value="" disabled selected>Choose your option</option>
                                         <option value="1">Option 1</option>
                                         <option value="2">Option 2</option>
                                         <option value="3">Option 3</option>
@@ -54,10 +60,7 @@
                         </div>
                     </div>
 
-
-
-
-                    <div class="card-action">  
+                    <div class="card-action">
 
                         <!-- Modal Structure -->
                         <div id="modal1" class="modal">
@@ -68,7 +71,7 @@
                             </div>
 
                         </div>
-                        <button type='submit' class="btn" id="eh">Subbimtis</button>
+                        <button type='submit' class="btn" id="eh">Submit</button>
                     </div>
 
                 </div>
@@ -96,7 +99,8 @@
 
         $.post("/result", userData)
             .then(function (data) {
-                // console.log(data);
+                console.log(data);
+                //replace these areas with the data we get back
                 $("#inputname").text(data.name)
                 $("#inputlastName").text(data.name)
                 $('.modal').modal('open');
