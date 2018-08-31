@@ -33,26 +33,34 @@
                                         </div>
                                     </div>
 
-                                    <label>What color do you like?</label>
+                                    <label>You find it hard trusting others</label>
                                     <select class="browser-default" id="q1">
-                                        <option value="" hidden disabled selected>Select a Color</option>
-                                        <option value="1">Red</option>
-                                        <option value="2">Blue</option>
-                                        <option value="3">Green</option>
+                                        <option value="" hidden disabled selected>Select an Option</option>
+                                        <option value="1">1 (Strongly Disagree)</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="3">4</option>
+                                        <option value="3">5 (Strongly Agree)</option>
                                     </select>
 
-                                    <label>Browser Select</label>
+                                    <label>You are loyal to your friends</label>
                                     <select class="browser-default" id="q2">
-                                        <option value="1">Option 1</option>
-                                        <option value="2">Option 2</option>
-                                        <option value="3">Option 3</option>
+                                        <option value="" hidden disabled selected>Select an Option</option>
+                                        <option value="1">1 (Strongly Disagree)</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="3">4</option>
+                                        <option value="3">5 (Strongly Agree)</option>
                                     </select>
 
-                                    <label>Browser Select</label>
-                                    <select class="browser-default" id="q2">
-                                        <option value="1">Option 1</option>
-                                        <option value="2">Option 2</option>
-                                        <option value="3">Option 3</option>
+                                    <label>You like to speak out your mind</label>
+                                    <select class="browser-default" id="q3">
+                                        <option value="" hidden disabled selected>Select an Option</option>
+                                        <option value="1">1 (Strongly Disagree)</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="3">4</option>
+                                        <option value="3">5 (Strongly Agree)</option>
                                     </select>
 
                                 </form>
@@ -66,8 +74,11 @@
                         <div id="modal1" class="modal">
                             <!-- These will be replaced by a name -->
                             <div class="modal-content">
-                                <h4 id="inputname">Modal Header</h4>
+                                <p>
+                                    <span id="inputname">Modal Header</span>, you are <span id="matchedName">Saber</span>
+                                </p>
                                 <p id="inputlastName">A bunch of text</p>
+                                <img id="charImg" width="200px" src="" alt="charcter image">
                             </div>
 
                         </div>
@@ -95,15 +106,23 @@
         var userData = {
             name: $("#first_name").val().trim(),
             last: $("#last_name").val().trim(),
+            photo: "/images/saber.jpeg",
+            score: [
+                $("#q1").val(),
+                $("#q2").val(),
+                $("#q3").val()
+            ]
         }
 
         $.post("/result", userData)
             .then(function (data) {
                 console.log(data);
                 //replace these areas with the data we get back
-                $("#inputname").text(data.name)
-                $("#inputlastName").text(data.name)
+                $("#inputname").text(data.name);
+                $("#inputlastName").text(data.score[0]);
+                $("#charImg").attr("src", data.photo);
                 $('.modal').modal('open');
+
             })
     })
 

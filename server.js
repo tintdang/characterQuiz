@@ -10,7 +10,11 @@ var PORT = process.env.PORT || 8080;
 app.use(bodyParser.urlencoded({ extended: true}));
 app.use(bodyParser.json());
 
-//main route index
+//grab the characters json file
+var characters = require('./app/data/characters.js')
+// console.log(characters)
+
+//main html route index
 app.get("/", function (req, res) {
     res.sendFile(path.join(__dirname, "/app/public/home.html"))
 });
@@ -24,14 +28,29 @@ app.get("/images/001fgo.jpg", function(req, res){
     res.sendFile(path.join(__dirname, "/app/assets/images/001fgo.jpg"))
 })
 
+app.get("/images/saber.jpeg", function(req, res){
+    res.sendFile(path.join(__dirname, "/app/assets/images/saber.jpeg"))
+})
+
 app.post("/result", function(req, res){
-    console.log(req.body)
+    var response = req.body
+    console.log(response)
+    for(var i = 0; i < characters.length; i++){
+        console.log(characters[i].scores[0])
+    }
+    // for(var i = 0; i < response.score.length; i++){
+    //     // run the comparisions
+    //     console.log(response.score[i])
+
+    // }
     res.send(req.body)
 
 })
 
 
+//main json routes
 
+//listener
 app.listen(PORT, function () {
     console.log(`Listening on port: ${PORT}`)
 })
