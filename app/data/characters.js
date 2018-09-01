@@ -1,6 +1,6 @@
 var characters = [{
     "name": "King Arthur",
-    "photo": "/images/saber.jpeg",
+    "photo": "/assets/images/saber.jpeg",
     "scores": [
         1,
         5,
@@ -11,7 +11,7 @@ var characters = [{
 },
 {
     "name": "Mordred",
-    "photo": "/images/Mordred.png",
+    "photo": "/assets/images/Mordred.png",
     "scores": [
         5,
         1,
@@ -22,7 +22,7 @@ var characters = [{
 },
 {
     "name": "Emiya Shirou",
-    "photo": "/images/emiya.jpeg",
+    "photo": "/assets/images/emiya.jpeg",
     "scores": [
         1,
         2,
@@ -31,5 +31,6 @@ var characters = [{
     ],
     "bio": "His personality is very contradicting. While he is thoroughly cynical and nihilistic, he is at the same time devoted and protective, and even a little childish to the point that it makes him hard to hate. He does not lie, but he does keep secrets and tell half truths. He means well and is capable of being nice, but often ends up being sarcastic, especially so when he gives advice."
 }]
-
+// gil
+// 
 module.exports = characters
