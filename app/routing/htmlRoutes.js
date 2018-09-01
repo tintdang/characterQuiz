@@ -12,6 +12,11 @@ router.get("/survey", function (req, res) {
     res.sendFile(path.join(__dirname, "../public/survey.html"))
 })
 
+// Catches any other routes and sends it over to the homepage
+router.get("*", function (req, res) {
+    res.sendFile(path.join(__dirname, "../public/home.html"))
+});
+
 //Grabs my image file
 
 // router.get("/images/001fgo.jpg", function (req, res) {
