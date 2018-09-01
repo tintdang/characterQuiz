@@ -4,6 +4,11 @@ var router = express.Router();
 
 var characters = require('../data/characters.js')
 
+router.get("/api/characters", function(req, res){
+    res.json(characters)
+})
+
+
 router.post("/api/characters", function (req, res) {
     var response = req.body
     var characterScore = []
