@@ -30,7 +30,7 @@
                                     </div>
 
                                     <label>You find it hard trusting others</label>
-                                    <select class="browser-default" id="q1">
+                                    <select class="browser-default validate" id="q1">
                                         <option value="" hidden disabled selected>Select an Option</option>
                                         <option value="1">1 (Strongly Disagree)</option>
                                         <option value="2">2</option>
@@ -40,7 +40,7 @@
                                     </select>
 
                                     <label>You are loyal to your friends</label>
-                                    <select class="browser-default" id="q2">
+                                    <select class="browser-default validate" id="q2">
                                         <option value="" hidden disabled selected>Select an Option</option>
                                         <option value="1">1 (Strongly Disagree)</option>
                                         <option value="2">2</option>
@@ -50,7 +50,7 @@
                                     </select>
 
                                     <label>You like to speak out your mind</label>
-                                    <select class="browser-default" id="q3">
+                                    <select class="browser-default validate" id="q3">
                                         <option value="" hidden disabled selected>Select an Option</option>
                                         <option value="1">1 (Strongly Disagree)</option>
                                         <option value="2">2</option>
@@ -73,7 +73,7 @@
                                 <p>
                                     <span id="inputname">Modal Header</span>, you are <span id="matchedName">Saber</span>
                                 </p>
-                                <img id="charImg" width="200px" src="" alt="charcter image">
+                                <img id="charImg" width="500px" src="" alt="charcter image">
                                 <p id="bio"></p>
                             </div>
 
@@ -99,25 +99,42 @@
 
     $("#eh").on("click", function (event) {
         event.preventDefault();
-        var userData = {
-            name: $("#first_name").val().trim(),
-            score: [
-                $("#q1").val(),
-                $("#q2").val(),
-                $("#q3").val()
-            ]
+
+
+        //Return if all inputs are not filled in ""
+        function validate() {
+            var isValid = true;
+            $(".validate").each(function () {
+                if ($(this).val() === "") {
+                    isValid = false;
+                }
+            });
+            return isValid;
         }
 
-        $.post("/api/characters", userData)
-            .then(function (data) {
-                console.log(data);
-                //replace these areas with the data we get back
-                $("#matchedName").text(data.name);
-                $("#inputname").text(data.userName);
-                $("#charImg").attr("src", data.photo);
-                $("#bio").text(data.bio)
-                $('.modal').modal('open');
-            })
+        if (validate()) {
+            var userData = {
+                name: $("#first_name").val().trim(),
+                score: [
+                    $("#q1").val(),
+                    $("#q2").val(),
+                    $("#q3").val()
+                ]
+            }
+
+            $.post("/api/characters", userData)
+                .then(function (data) {
+                    console.log(data);
+                    //replace these areas with the data we get back
+                    $("#matchedName").text(data.name);
+                    $("#inputname").text(data.userName);
+                    $("#charImg").attr("src", data.photo);
+                    $("#bio").text(data.bio)
+                    $('.modal').modal('open');
+                })
+        } else{
+            alert("Please fill out all the fields to get an response!")
+        }
     })
 
 </script>

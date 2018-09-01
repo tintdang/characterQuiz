@@ -10,13 +10,13 @@ var characters = [{
 },
 {
     "name": "Mordred",
-    "photo": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+    "photo": "/images/Mordred.png",
     "scores": [
         5,
         1,
         4
     ],
-    "bio": "Mordred does this"
+    "bio": "She works hard daily in being the ideal knight, all while hiding her dislike of others."
 }]
 
 module.exports = characters
