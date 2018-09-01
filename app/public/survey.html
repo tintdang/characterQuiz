@@ -116,6 +116,10 @@
     $(document).ready(function () {
         $('.modal').modal();
     });
+    // prevents the inputbox from redirecting when pressing enter 
+    $("#first_name").keypress(function(event){
+        if ( event.which == 13 ) event.preventDefault();
+    })
 
     $("#eh").on("click", function (event) {
         event.preventDefault();
