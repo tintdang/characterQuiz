@@ -64,21 +64,41 @@ app.post("/result", function (req, res) {
     console.log(`This is the total scores: ${totalScores}`)
     // Find the lowest score with the index
     //Return the index with lowest score
-    function getLowestValue(array) {
+    function getLowestIndex(array) {
         var low = array[0];
+        var lowIndex = 0;
 
         for (i = 1; i < array.length; i++) { // start with index 1, because you need to
             // check against the last known smallest value
             if (array[i] < low) {
                 low = array[i];
+                lowIndex = i;
+            } //IF ANY REASON THEY HAVE THE SAME SCORE JUST COIN FLIP IT AND MOVE ON
+            else if (array[i] === low) {
+                //if true, let the next array index be the lowest
+                if (coinFlip()) {
+                    low = array[i];
+                    lowIndex = i;
+
+                    function coinFlip() {
+                        return (Math.floor(Math.random() * 2) == 0);
+                    }
+                } else {
+                    // else keep the old array index
+                    continue
+                }
             }
+
         }
-        return low;
+        console.log(low)
+        return lowIndex;
     }
 
-    var selectedChar = getLowestValue(totalScores)
- 
+    var selectedChar = getLowestIndex(totalScores)
+
     // send character data to client
+
+    console.log(`You are this index: ${selectedChar} which is ${characters[selectedChar].name}`)
 
     res.send(characters[selectedChar])
 
