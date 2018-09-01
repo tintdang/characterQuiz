@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>Survey</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
@@ -58,6 +58,16 @@
                                         <option value="4">4</option>
                                         <option value="5">5 (Strongly Agree)</option>
                                     </select>
+                                    
+                                    <label>You like to keep secrets</label>
+                                    <select class="browser-default validate" id="q4">
+                                        <option value="" hidden disabled selected>Select an Option</option>
+                                        <option value="1">1 (Strongly Disagree)</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5 (Strongly Agree)</option>
+                                    </select>
 
                                 </form>
                             </div>
@@ -67,13 +77,13 @@
                     <div class="card-action">
 
                         <!-- Modal Structure -->
-                        <div id="modal1" class="modal">
+                        <div class="modal">
                             <!-- These will be replaced by a name -->
                             <div class="modal-content">
+                                <img id="charImg" width="500px" src="" alt="charcter image">
                                 <p>
                                     <span id="inputname">Modal Header</span>, you are <span id="matchedName">Saber</span>
                                 </p>
-                                <img id="charImg" width="500px" src="" alt="charcter image">
                                 <p id="bio"></p>
                             </div>
 
@@ -125,7 +135,8 @@
                 score: [
                     $("#q1").val(),
                     $("#q2").val(),
-                    $("#q3").val()
+                    $("#q3").val(),
+                    $("#q4").val()
                 ]
             }
 
