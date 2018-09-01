@@ -23,13 +23,9 @@
                                 <form class="col s12">
 
                                     <div class="row">
-                                        <div class="input-field col s6">
-                                            <input placeholder="Placeholder" id="first_name" type="text" class="validate">
-                                            <label for="first_name">First Name</label>
-                                        </div>
-                                        <div class="input-field col s6">
-                                            <input id="last_name" type="text" class="validate">
-                                            <label for="last_name">Last Name</label>
+                                        <div class="input-field col s12">
+                                            <input placeholder="Name" id="first_name" type="text" class="validate">
+                                            <label for="first_name">Please enter your name here</label>
                                         </div>
                                     </div>
 
@@ -105,8 +101,6 @@
         event.preventDefault();
         var userData = {
             name: $("#first_name").val().trim(),
-            last: $("#last_name").val().trim(),
-            photo: "/images/saber.jpeg",
             score: [
                 $("#q1").val(),
                 $("#q2").val(),
