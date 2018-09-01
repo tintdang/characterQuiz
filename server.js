@@ -100,7 +100,12 @@ app.post("/result", function (req, res) {
 
     console.log(`You are this index: ${selectedChar} which is ${characters[selectedChar].name}`)
 
-    res.send(characters[selectedChar])
+    //Add the user's name into the object
+    var data = characters[selectedChar];
+    data.userName = response.name
+
+    console.log(`Sending over ${JSON.stringify(data)}`)
+    res.send(data)
 
 })
 

@@ -77,8 +77,8 @@
                                 <p>
                                     <span id="inputname">Modal Header</span>, you are <span id="matchedName">Saber</span>
                                 </p>
-                                <p id="inputlastName">A bunch of text</p>
                                 <img id="charImg" width="200px" src="" alt="charcter image">
+                                <p id="bio"></p>
                             </div>
 
                         </div>
@@ -118,9 +118,10 @@
             .then(function (data) {
                 console.log(data);
                 //replace these areas with the data we get back
-                $("#inputname").text(data.name);
-                $("#inputlastName").text(data.score[0]);
+                $("#matchedName").text(data.name);
+                $("#inputname").text(data.userName);
                 $("#charImg").attr("src", data.photo);
+                $("#bio").text(data.bio)
                 $('.modal').modal('open');
 
             })
