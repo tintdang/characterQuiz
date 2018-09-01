@@ -15,12 +15,13 @@ router.get("/survey", function (req, res) {
 //Grabs my image file
 
 router.get("/images/001fgo.jpg", function (req, res) {
-    res.sendFile(path.join(__dirname, "../assets/images/001fgo.jpg"))
+    res.sendFile(path.join(__dirname, "../public/assets/images/001fgo.jpg"))
 })
 
 //Gets the image files
 router.get("/images/:imageName", function(req, res){
-    res.sendFile(path.join(__dirname, "../assets/images/" + req.params.imageName))
+
+    res.sendFile(path.join(__dirname, "../public/assets/images/" + req.params.imageName))
 })
 
 module.exports = router
