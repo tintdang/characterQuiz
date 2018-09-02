@@ -30,7 +30,7 @@
                                         </div>
                                     </div>
 
-                                    <label>You find it hard trusting others</label>
+                                    <label>1). You find it hard trusting others</label>
                                     <select class="browser-default validate" id="q1">
                                         <option value="" hidden disabled selected>Select an Option</option>
                                         <option value="1">1 (Strongly Disagree)</option>
@@ -40,7 +40,7 @@
                                         <option value="5">5 (Strongly Agree)</option>
                                     </select>
 
-                                    <label>You are loyal to your friends</label>
+                                    <label>2). You are loyal to your friends</label>
                                     <select class="browser-default validate" id="q2">
                                         <option value="" hidden disabled selected>Select an Option</option>
                                         <option value="1">1 (Strongly Disagree)</option>
@@ -50,7 +50,7 @@
                                         <option value="5">5 (Strongly Agree)</option>
                                     </select>
 
-                                    <label>You like to speak out your mind</label>
+                                    <label>3). You like to speak out your mind</label>
                                     <select class="browser-default validate" id="q3">
                                         <option value="" hidden disabled selected>Select an Option</option>
                                         <option value="1">1 (Strongly Disagree)</option>
@@ -60,7 +60,7 @@
                                         <option value="5">5 (Strongly Agree)</option>
                                     </select>
                                     
-                                    <label>You like to keep secrets</label>
+                                    <label>4). You like to keep secrets</label>
                                     <select class="browser-default validate" id="q4">
                                         <option value="" hidden disabled selected>Select an Option</option>
                                         <option value="1">1 (Strongly Disagree)</option>
@@ -69,7 +69,67 @@
                                         <option value="4">4</option>
                                         <option value="5">5 (Strongly Agree)</option>
                                     </select>
-<!-- something about greed -->
+
+                                    <label>5). You like to share your possessions with others</label>
+                                    <select class="browser-default validate" id="q5">
+                                        <option value="" hidden disabled selected>Select an Option</option>
+                                        <option value="1">1 (Strongly Disagree)</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5 (Strongly Agree)</option>
+                                    </select>
+
+                                    <label>6). You prefer to stick to your own ideals rather than listen to others</label>
+                                    <select class="browser-default validate" id="q6">
+                                        <option value="" hidden disabled selected>Select an Option</option>
+                                        <option value="1">1 (Strongly Disagree)</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5 (Strongly Agree)</option>
+                                    </select>
+
+                                    <label>7). You think of yourself as a very clean person</label>
+                                    <select class="browser-default validate" id="q7">
+                                        <option value="" hidden disabled selected>Select an Option</option>
+                                        <option value="1">1 (Strongly Disagree)</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5 (Strongly Agree)</option>
+                                    </select>
+
+                                    <label>8). You care about your looks</label>
+                                    <select class="browser-default validate" id="q8">
+                                        <option value="" hidden disabled selected>Select an Option</option>
+                                        <option value="1">1 (Strongly Disagree)</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5 (Strongly Agree)</option>
+                                    </select>
+                                    
+                                    <label>9). People say it is easy to get along with you</label>
+                                    <select class="browser-default validate" id="q9">
+                                        <option value="" hidden disabled selected>Select an Option</option>
+                                        <option value="1">1 (Strongly Disagree)</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5 (Strongly Agree)</option>
+                                    </select>
+
+                                    <label>10). You rely on your own smarts than your own strength</label>
+                                    <select class="browser-default validate" id="q10">
+                                        <option value="" hidden disabled selected>Select an Option</option>
+                                        <option value="1">1 (Strongly Disagree)</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5 (Strongly Agree)</option>
+                                    </select>
+
                                 </form>
                             </div>
                         </div>
@@ -80,18 +140,18 @@
                         <!-- Modal Structure -->
                         <div class="modal">
                             <!-- close button -->
-                            <a href="#!" class="right modal-close btn"><i class=" close material-icons right white-text">x</i></a>
+                            <a href="#!" class="right modal-close btn" id="close"><i class=" close material-icons right white-text">x</i></a>
                             <!-- These will be replaced by a name -->
                             <div class="modal-content">
-                                <img id="charImg" width="500px" src="" alt="charcter image">
-                                <p>
+                                <img id="charImg" width="500px" src="" alt="charcter image" class="responsive-img">
+                                <h1 id="modalHead">
                                     <span id="inputname">Modal Header</span>, you are <span id="matchedName">Saber</span>
-                                </p>
+                                </h1>
                                 <p id="bio"></p>
                             </div>
 
                         </div>
-                        <button type='submit' class="btn" id="eh">Submit</button>
+                        <button type='submit' class="btn right" id="eh">Submit</button>
                     </div>
 
                 </div>
@@ -143,7 +203,13 @@
                     $("#q1").val(),
                     $("#q2").val(),
                     $("#q3").val(),
-                    $("#q4").val()
+                    $("#q4").val(),
+                    $("#q5").val(),
+                    $("#q6").val(),
+                    $("#q7").val(),
+                    $("#q8").val(),
+                    $("#q9").val(),
+                    $("#q10").val()
                 ]
             }
 

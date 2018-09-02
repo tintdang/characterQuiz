@@ -9,6 +9,7 @@ var htmlRoutes = require("./app/routing/htmlRoutes")
 
 //Set up port for heroku
 var PORT = process.env.PORT || 8080;
+
 //allows me to use my custom js/css files
 app.use(express.static(__dirname + "/app/public"));
 

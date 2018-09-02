@@ -4,7 +4,7 @@ var router = express.Router();
 
 var characters = require('../data/characters.js')
 
-router.get("/api/characters", function(req, res){
+router.get("/api/characters", function (req, res) {
     res.json(characters)
 })
 
@@ -18,13 +18,12 @@ router.post("/api/characters", function (req, res) {
 
     for (var i = 0; i < characters.length; i++) {
         console.log(`${characters[i].name}'s scores are: `)
-        for (var j = 0; j < characters[0].scores.length; j++) {
-            console.log(`${characters[i].scores[j]} Minus user's scores are ${response.score[j]}`)
+        for (var j = 0; j < characters[i].scores.length; j++) {
+            // console.log(`${characters[i].scores[j]} Minus user's scores are ${response.score[j]}`)
             var total = Math.abs(characters[i].scores[j] - parseInt(response.score[j]))
             console.log(total)
             characterScore.push(total)
             // subtract 
-            console.log(`response is a string: ${typeof (response.score[j])}`)
         }
         console.log(characterScore)
         // sum all values in the array
@@ -57,9 +56,6 @@ router.post("/api/characters", function (req, res) {
                     low = array[i];
                     lowIndex = i;
 
-                    function coinFlip() {
-                        return (Math.floor(Math.random() * 2) == 0);
-                    }
                 } else {
                     // else keep the old array index
                     continue
@@ -71,6 +67,9 @@ router.post("/api/characters", function (req, res) {
         return lowIndex;
     }
 
+    function coinFlip() {
+        return (Math.floor(Math.random() * 2) == 0);
+    }
     var selectedChar = getLowestIndex(totalScores)
 
     // send character data to client

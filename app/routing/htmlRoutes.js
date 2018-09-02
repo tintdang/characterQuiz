@@ -17,7 +17,7 @@ router.get("*", function (req, res) {
     res.sendFile(path.join(__dirname, "../public/home.html"))
 });
 
-//Grabs my image file
+//Grabs my image file --don't need it due to express static functions-- 
 
 // router.get("/images/001fgo.jpg", function (req, res) {
 //     res.sendFile(path.join(__dirname, "../public/assets/images/001fgo.jpg"))
