@@ -1,9 +1,9 @@
 # Fate Character Personality Quiz
 
-## An application that is based of the series Fate that includes a survey for the user to answer. The answers are compared with a list of characters and returns the character that has the closest compatibility score with the user! https://protected-depths-68359.herokuapp.com/
+## An application that is based of the series Fate that includes a survey for the user to answer. The answers are compared with a list of characters and returns the character that has the closest compatibility score with the user! https://fatecharacterquiz-12b0dc3f15ed.herokuapp.com/
 
 ## How to start
-Click [here](https://protected-depths-68359.herokuapp.com/) to visit deployed site.
+Click [here](https://fatecharacterquiz-12b0dc3f15ed.herokuapp.com/) to visit deployed site.
 
 You will be directed to the home page. Click on the go to survey button to start. 
 
